@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AKRIAS Digital | L'Intelligence Immobilière</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        akrias: {
+                            dark: '#020617', 
+                            card: '#0f172a', 
+                            primary: '#3b82f6', 
+                            secondary: '#6366f1' 
+                        }
+                    },
+                    backgroundImage: {
+                        'glow': 'radial-gradient(circle at 50% 0%, rgba(59,130,246,0.15) 0%, rgba(2,6,23,0) 70%)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .glass-panel:hover {
+            border-color: rgba(59, 130, 246, 0.3);
+            transform: translateY(-5px);
+        }
+        /* Style pour les détails de la FAQ */
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        details[open] summary ~ * {
+            animation: sweep .3s ease-in-out;
+        }
+        @keyframes sweep {
+            0%    {opacity: 0; transform: translateY(-10px)}
+            100%  {opacity: 1; transform: translateY(0)}
+        }
+        .btn-glow {
+            animation: pulse-glow 3s infinite;
+        }
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 15px rgba(59, 130, 246, 0.2); }
+            50% { box-shadow: 0 0 25px rgba(59, 130, 246, 0.4); }
+        }
+    </style>
+</head>
+<body class="bg-akrias-dark text-slate-300 font-sans overflow-x-hidden selection:bg-akrias-primary selection:text-white">
+
+    <div class="fixed inset-0 bg-glow pointer-events-none z-0"></div>
+
+    <nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-akrias-dark/90 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="font-display font-black text-2xl tracking-tight text-white">
+                AKRIAS<span class="text-akrias-primary">.</span>
+            </div>
+            <a href="mailto:rayane@akrias.fr" class="px-5 py-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/5 text-white text-sm font-medium transition flex items-center gap-2">
+                <i class="fa-regular fa-envelope"></i> rayane@akrias.fr
+            </a>
+        </div>
+    </nav>
+
+    <section class="relative z-10 pt-40 pb-16 px-6 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="font-display font-black text-5xl md:text-7xl text-white leading-[1.1] mb-8">
+                L'Agence ne dort jamais.<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-akrias-primary to-akrias-secondary">Votre Business non plus.</span>
+            </h1>
+            
+            <p class="text-lg text-slate-400 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+                <strong>AKRIAS</strong> déploie des Agents IA et des systèmes d'automatisation pour l'Immobilier. 
+                Qualifiez vos prospects et remplissez votre agenda sans lever le petit doigt.
+            </p>
+
+            <div class="flex justify-center gap-4">
+                <a href="#demo" class="btn-glow px-8 py-4 bg-akrias-primary hover:bg-blue-600 text-white font-bold rounded-xl transition transform active:scale-95">
+                    Tester l'Assistant
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="relative z-10 py-12 px-6">
+        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <div class="glass-panel rounded-2xl p-8 group">
+                <div class="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center mb-6 text-akrias-primary group-hover:scale-110 transition">
+                    <i class="fa-solid fa-brain text-xl"></i>
+                </div>
+                <h3 class="text-xl text-white font-bold mb-3">Intelligence Artificielle</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Un agent virtuel qui filtre les "touristes", qualifie les vendeurs sérieux et détecte les mandats potentiels 24h/24.
+                </p>
+            </div>
+
+            <div class="glass-panel rounded-2xl p-8 group">
+                <div class="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center mb-6 text-akrias-secondary group-hover:scale-110 transition">
+                    <i class="fa-solid fa-network-wired text-xl"></i>
+                </div>
+                <h3 class="text-xl text-white font-bold mb-3">Automation (Make)</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    Zéro saisie manuelle. Vos leads atterrissent automatiquement dans votre CRM (Google Sheets, Pipedrive) et reçoivent une alerte SMS.
+                </p>
+            </div>
+
+            <div class="glass-panel md:col-span-2 rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-r from-akrias-primary/10 to-transparent pointer-events-none"></div>
+                <div class="relative z-10 text-center md:text-left">
+                    <h3 class="text-2xl text-white font-bold mb-2">Prêt à moderniser votre structure ?</h3>
+                    <p class="text-slate-400">L'audit de faisabilité est gratuit pour les entreprises d'Île-de-France.</p>
+                </div>
+                <div class="relative z-10">
+                    <a href="mailto:rayane@akrias.fr" class="inline-block bg-white text-akrias-dark px-6 py-3 rounded-xl font-bold hover:bg-slate-200 transition shadow-lg">
+                        Contactez Rayane
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="relative z-10 py-12 px-6">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-2xl text-white font-display font-bold mb-8 text-center">Questions Fréquentes</h2>
+            
+            <div class="space-y-4">
+                <details class="glass-panel rounded-xl group p-1">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none text-white p-4">
+                        <span>L'IA va-t-elle remplacer mes agents commerciaux ?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i class="fa-solid fa-chevron-down text-akrias-primary"></i>
+                        </span>
+                    </summary>
+                    <div class="text-slate-400 text-sm px-4 pb-4 leading-relaxed">
+                        Absolument pas. AKRIAS est un filtre, pas un remplaçant. L'IA gère le premier contact chronophage (les curieux, les mauvaises infos) pour que vos commerciaux ne se concentrent que sur les <strong>RDV qualifiés</strong> à forte valeur ajoutée.
+                    </div>
+                </details>
+
+                <details class="glass-panel rounded-xl group p-1">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none text-white p-4">
+                        <span>Est-ce compliqué à installer dans mon agence ?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i class="fa-solid fa-chevron-down text-akrias-primary"></i>
+                        </span>
+                    </summary>
+                    <div class="text-slate-400 text-sm px-4 pb-4 leading-relaxed">
+                        Non, c'est une solution "Clé en main". Nous n'avons pas besoin de changer vos logiciels. Nous connectons simplement notre IA à vos outils existants (Site web, Email, Logiciel Immo) via des connecteurs invisibles.
+                    </div>
+                </details>
+
+                <details class="glass-panel rounded-xl group p-1">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none text-white p-4">
+                        <span>Mes données clients sont-elles sécurisées ?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i class="fa-solid fa-chevron-down text-akrias-primary"></i>
+                        </span>
+                    </summary>
+                    <div class="text-slate-400 text-sm px-4 pb-4 leading-relaxed">
+                        La sécurité est notre priorité. Nous utilisons des serveurs sécurisés et conformes aux standards européens. Vos données ne servent qu'à votre agence et ne sont jamais partagées à des tiers.
+                    </div>
+                </details>
+
+                <details class="glass-panel rounded-xl group p-1">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none text-white p-4">
+                        <span>Combien de temps avant d'avoir des résultats ?</span>
+                        <span class="transition group-open:rotate-180">
+                            <i class="fa-solid fa-chevron-down text-akrias-primary"></i>
+                        </span>
+                    </summary>
+                    <div class="text-slate-400 text-sm px-4 pb-4 leading-relaxed">
+                        Le déploiement prend généralement <strong>7 à 10 jours</strong>. Une fois en ligne, l'IA traite instantanément 100% des demandes entrantes. Vous voyez la différence sur votre agenda dès la première semaine.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <section id="demo" class="relative z-10 py-20 px-6 mt-8">
+        <div class="text-center mb-12">
+            <span class="text-akrias-primary font-bold tracking-widest text-xs uppercase mb-2 block">Technologie Live</span>
+            <h2 class="text-3xl md:text-4xl text-white font-display font-bold">Essayez AKRIAS maintenant</h2>
+        </div>
+
+        <div class="mx-auto w-full max-w-[360px] h-[720px] bg-black rounded-[3.5rem] border-[8px] border-slate-800 shadow-2xl relative overflow-hidden ring-1 ring-white/10">
+            <div class="absolute top-5 left-1/2 -translate-x-1/2 w-[100px] h-[28px] bg-black rounded-full z-30"></div>
+            <div class="absolute top-0 w-full h-14 z-20 flex justify-between items-center px-8 text-white text-[11px] pt-4 font-medium">
+                <span>10:45</span>
+                <div class="flex gap-1.5 text-[10px]">
+                    <i class="fa-solid fa-signal"></i><i class="fa-solid fa-wifi"></i><i class="fa-solid fa-battery-full"></i>
+                </div>
+            </div>
+            <div id="voiceflow-container" class="absolute inset-0 bg-white z-10 pt-12"></div>
+        </div>
+        
+        <div class="text-center mt-12">
+             <p class="text-slate-500 text-sm mb-2">Une question précise ?</p>
+             <a href="mailto:rayane@akrias.fr" class="text-akrias-primary hover:text-white transition font-bold text-lg">rayane@akrias.fr</a>
+        </div>
+        
+        <p class="text-center text-slate-600 text-xs mt-8">
+            Propulsé par Voiceflow & Make • © 2026 AKRIAS Digital
+        </p>
+    </section>
+
+    <script type="text/javascript">
+  (function(d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.onload = function() {
+        window.voiceflow.chat.load({
+          verify: { projectID: '695b1a59bd0e518db2f46c5c' },
+          url: 'https://general-runtime.voiceflow.com',
+          versionID: 'production',
+          render: {
+            mode: 'embedded',
+            target: document.getElementById('voiceflow-container')
+          },
+          autostart: true
+        }).then(() => {
+          // 1. On efface la session précédente pour forcer un nouvel accueil
+          window.voiceflow.chat.interact({
+            type: 'launch',
+          });
+        });
+      }
+      v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+  })(document, 'script');
+</script>
+</body>
+</html>
