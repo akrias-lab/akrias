@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Helix Immobilier - Démo IA</title>
+    <style>
+        body { margin: 0; padding: 0; background-color: #f0f0f0; }
+        .site-container {
+            width: 100%;
+            text-align: center;
+        }
+        .site-image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="site-container">
+        <img src="capture-helix.png" class="site-image" alt="Site Helix">
+    </div>
+
+ <script type="text/javascript">
+  (function(d, t) {
+      console.log("🛠️ Voiceflow : Lancement pour Agence de l'Empereur...");
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      
+      v.onload = function() {
+        window.voiceflow.chat.load({
+          verify: { projectID: '6966aedab1a47283abd973f5' }, // Vérifie bien que c'est le même ID que pour Sadone ou un nouveau
+          url: 'https://general-runtime.voiceflow.com',
+          versionID: 'production',
+          theme: {
+            color: '#1B2D48', // Tu peux adapter cette couleur au bleu/vert de l'Empereur
+            showPoweredBy: false
+          }
+        }).then(() => {
+          console.log("🚀 Widget Empereur Initialisé.");
+          
+          // Message 1 : Bienvenue locale
+          setTimeout(() => {
+            window.voiceflow.chat.proactive.push({ 
+              type: 'text', 
+              payload: { message: "Bonjour ! Bienvenue chez Helix immobilier. ✨" } 
+            });
+          }, 1000);
+
+          // Message 2 : Focus Rueil-Malmaison
+          setTimeout(() => {
+            window.voiceflow.chat.proactive.push({ 
+              type: 'text', 
+              payload: { message: "Je suis votre expert virtuel. Souhaitez-vous une estimation de votre bien ? 🏠" } 
+            });
+          }, 3000);
+
+          // Ouverture automatique (6 secondes)
+          setTimeout(() => {
+            window.voiceflow.chat.open();
+          }, 6000);
+          
+        });
+      }
+      v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+  })(document, 'script');
+</script>
+
+</body>
+</html>
