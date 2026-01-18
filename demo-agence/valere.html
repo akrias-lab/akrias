@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agence Valère - Démo IA</title>
+    <style>
+        body { 
+            margin: 0; 
+            padding: 0; 
+            background-color: #f8f8f8; 
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .container {
+            width: 100%;
+            text-align: center;
+        }
+        .img-site {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="/asset/valere.png" class="img-site" alt="Interface Agence Valère">
+    </div>
+
+    <script type="text/javascript">
+    (function(d, t) {
+        console.log("🍷 Voiceflow : Lancement pour Agence Valère...");
+        var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+        
+        v.onload = function() {
+            window.voiceflow.chat.load({
+                verify: { projectID: '696299ab8bcc479dce293ca9' }, 
+                url: 'https://general-runtime.voiceflow.com',
+                versionID: 'production',
+                theme: {
+                    color: '#8B0000', // Le Bordeaux caractéristique de l'Agence Valère
+                    showPoweredBy: false,
+                    assistant: {
+                        title: "L'Expert Valère",
+                        image: "https://www.agencevalere.fr/images/logo.png" 
+                    }
+                }
+            }).then(() => {
+                console.log("🚀 Widget Valère Initialisé.");
+                
+                // Message 1 : Accueil de proximité
+                setTimeout(() => {
+                    window.voiceflow.chat.proactive.push({ 
+                        type: 'text', 
+                        payload: { message: "Bonjour ! Bienvenue chez l'Agence Valère. ✨" } 
+                    });
+                }, 1000);
+
+                // Message 2 : Focus Val-de-Marne (94)
+                setTimeout(() => {
+                    window.voiceflow.chat.proactive.push({ 
+                        type: 'text', 
+                        payload: { message: "Je suis votre assistant virtuel. Un projet à Joinville, Saint-Maur ou dans les environs ? Je vous accompagne ! 🏠" } 
+                    });
+                }, 3000);
+
+                // Ouverture automatique (6 secondes)
+                setTimeout(() => {
+                    window.voiceflow.chat.open();
+                }, 6000);
+                
+            });
+        }
+        v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; 
+        v.type = "text/javascript"; 
+        s.parentNode.insertBefore(v, s);
+    })(document, 'script');
+    </script>
+
+</body>
+</html>

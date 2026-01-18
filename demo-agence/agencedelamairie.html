@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agence de la Mairie - Démo IA Premium</title>
+    <style>
+        body { 
+            margin: 0; 
+            padding: 0; 
+            background-color: #ffffff; 
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .container {
+            width: 100%;
+            text-align: center;
+        }
+        .img-site {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="asset/agencedelamairie.png" class="img-site" alt="Interface Agence de la Mairie">
+    </div>
+
+    <script type="text/javascript">
+    (function(d, t) {
+        console.log("🏛️ Voiceflow : Lancement pour l'Agence de la Mairie (Saint-Maur)...");
+        var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+        
+        v.onload = function() {
+            window.voiceflow.chat.load({
+                verify: { projectID: '6966aedab1a47283abd973f5' }, 
+                url: 'https://general-runtime.voiceflow.com',
+                versionID: 'production',
+                theme: {
+                    color: '#a41a1d', // Le Bordeaux exact du logo de l'agence
+                    showPoweredBy: false,
+                    assistant: {
+                        title: "Conseiller de la Mairie",
+                        image: "https://www.agencedelamairie.fr/images/logo.png" 
+                    }
+                }
+            }).then(() => {
+                console.log("🚀 Widget Agence de la Mairie Opérationnel.");
+                
+                // Message 1 : Accueil personnalisé
+                setTimeout(() => {
+                    window.voiceflow.chat.proactive.push({ 
+                        type: 'text', 
+                        payload: { message: "Bienvenue chez l'Agence de la Mairie. ✨" } 
+                    });
+                }, 1000);
+
+                // Message 2 : Hyper-localisation (Saint-Maur / Joinville)
+                setTimeout(() => {
+                    window.voiceflow.chat.proactive.push({ 
+                        type: 'text', 
+                        payload: { message: "Spécialiste de Saint-Maur et Joinville. Souhaitez-vous une estimation à La Varenne, Adamville ou au quartier de la Mairie ? 🏠" } 
+                    });
+                }, 3500);
+
+                // Ouverture automatique (6 secondes)
+                setTimeout(() => {
+                    window.voiceflow.chat.open();
+                }, 6000);
+                
+            });
+        }
+        v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; 
+        v.type = "text/javascript"; 
+        s.parentNode.insertBefore(v, s);
+    })(document, 'script');
+    </script>
+
+</body>
+</html>

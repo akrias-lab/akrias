@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Igny Immobilier - Démo IA Proximité</title>
+    <style>
+        body { 
+            margin: 0; 
+            padding: 0; 
+            background-color: #ffffff; 
+            font-family: 'Open Sans', Arial, sans-serif;
+        }
+        .container {
+            width: 100%;
+            text-align: center;
+        }
+        .img-site {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="asset/Agence du golf.png" class="img-site" alt="Interface Igny Immobilier">
+    </div>
+
+    <script type="text/javascript">
+    (function(d, t) {
+        console.log("📍 Voiceflow : Lancement pour l'Agence d'Igny...");
+        var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+        
+        v.onload = function() {
+            window.voiceflow.chat.load({
+                verify: { projectID: '696299ab8bcc479dce293ca9' }, 
+                url: 'https://general-runtime.voiceflow.com',
+                versionID: 'production',
+                theme: {
+                    color: '#004a99', // Le Bleu de l'Agence d'Igny
+                    showPoweredBy: false,
+                    assistant: {
+                        title: "Assistant Igny Immobilier",
+                        image: "https://www.immobilier-igny.fr/favicon.ico" 
+                    }
+                }
+            }).then(() => {
+                console.log("🚀 Widget Igny Immobilier Initialisé.");
+                
+                // Message 1 : Accueil Local
+                setTimeout(() => {
+                    window.voiceflow.chat.proactive.push({ 
+                        type: 'text', 
+                        payload: { message: "Bonjour ! Bienvenue chez Igny Immobilier. ✨" } 
+                    });
+                }, 1000);
+
+                // Message 2 : Focus Secteur (Igny / Bièvres / Vauhallan)
+                setTimeout(() => {
+                    window.voiceflow.chat.proactive.push({ 
+                        type: 'text', 
+                        payload: { message: "Spécialiste du secteur depuis de nombreuses années, je vous aide pour votre projet à Igny, Bièvres ou Vauhallan. Une estimation ? 🏠" } 
+                    });
+                }, 3000);
+
+                // Ouverture automatique (6 secondes)
+                setTimeout(() => {
+                    window.voiceflow.chat.open();
+                }, 6000);
+                
+            });
+        }
+        v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; 
+        v.type = "text/javascript"; 
+        s.parentNode.insertBefore(v, s);
+    })(document, 'script');
+    </script>
+
+</body>
+</html>

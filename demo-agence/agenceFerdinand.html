@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agences Saint Ferdinand - Démo IA Prestige</title>
+    <style>
+        body { 
+            margin: 0; 
+            padding: 0; 
+            background-color: #ffffff; 
+            font-family: 'Georgia', serif; /* Un style un peu plus "immobilier de famille" */
+        }
+        .container {
+            width: 100%;
+            text-align: center;
+        }
+        .img-site {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="asset/agenceFerdinand.png" class="img-site" alt="Interface Agences Saint Ferdinand">
+    </div>
+
+    <script type="text/javascript">
+    (function(d, t) {
+        console.log("🔵 Voiceflow : Lancement pour Agences Saint Ferdinand...");
+        var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+        
+        v.onload = function() {
+            window.voiceflow.chat.load({
+                verify: { projectID: '696299ab8bcc479dce293ca9' }, 
+                url: 'https://general-runtime.voiceflow.com',
+                versionID: 'production',
+                theme: {
+                    color: '#002B5C', // Le Bleu Marine profond Saint Ferdinand
+                    showPoweredBy: false,
+                    assistant: {
+                        title: "Votre Conseiller Saint Ferdinand",
+                        image: "https://www.agencessaintferdinand.com/favicon.ico" 
+                    }
+                }
+            }).then(() => {
+                console.log("🚀 Widget Saint Ferdinand Initialisé.");
+                
+                // Message 1 : Accueil institutionnel
+                setTimeout(() => {
+                    window.voiceflow.chat.proactive.push({ 
+                        type: 'text', 
+                        payload: { message: "Bienvenue chez Agences Saint Ferdinand, l'immobilier de famille depuis 1991. ✨" } 
+                    });
+                }, 1000);
+
+                // Message 2 : Focus Ouest Parisien & Neuilly
+                setTimeout(() => {
+                    window.voiceflow.chat.proactive.push({ 
+                        type: 'text', 
+                        payload: { message: "Un projet à Paris 16, 17, Neuilly ou Levallois ? Je suis là pour vous accompagner. Souhaitez-vous une estimation confidentielle ? 🏠" } 
+                    });
+                }, 3500);
+
+                // Ouverture automatique (6 secondes)
+                setTimeout(() => {
+                    window.voiceflow.chat.open();
+                }, 6000);
+                
+            });
+        }
+        v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; 
+        v.type = "text/javascript"; 
+        s.parentNode.insertBefore(v, s);
+    })(document, 'script');
+    </script>
+
+</body>
+</html>

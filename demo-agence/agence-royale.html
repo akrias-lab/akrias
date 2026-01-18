@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agence Royale - Démo IA</title>
+    <style>
+        body { 
+            margin: 0; 
+            padding: 0; 
+            background-color: #f0f0f0; 
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 100%;
+            text-align: center;
+        }
+        .img-site {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="asset/agence-royale.png" class="img-site" alt="Interface Agence Royale">
+    </div>
+
+    <script type="text/javascript">
+    (function(d, t) {
+        console.log("👑 Voiceflow : Lancement pour l'Agence Royale...");
+        var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+        
+        v.onload = function() {
+            window.voiceflow.chat.load({
+                // ID projet pour Royale (Vérifie si tu en as un spécifique)
+                verify: { projectID: '696299ab8bcc479dce293ca9' }, 
+                url: 'https://general-runtime.voiceflow.com',
+                versionID: 'production',
+                theme: {
+                    color: '#002a54', // Bleu Marine Profond de l'Agence Royale
+                    showPoweredBy: false,
+                    assistant: {
+                        title: "Conciergerie Royale",
+                        image: "https://www.agence-royale.fr/images/logo.png"
+                    }
+                }
+            }).then(() => {
+                console.log("🚀 Widget Agence Royale Initialisé.");
+                
+                // Message 1 : Accueil Prestige
+                setTimeout(() => {
+                    window.voiceflow.chat.proactive.push({ 
+                        type: 'text', 
+                        payload: { message: "Bonjour ! Bienvenue à l'Agence Royale Versailles. ✨" } 
+                    });
+                }, 1000);
+
+                // Message 2 : Focus Versailles / Estimation
+                setTimeout(() => {
+                    window.voiceflow.chat.proactive.push({ 
+                        type: 'text', 
+                        payload: { message: "Je suis votre expert virtuel. Souhaitez-vous une estimation ou découvrir nos biens d'exception ? 🏛️" } 
+                    });
+                }, 3000);
+
+                // Ouverture automatique du chat (6 secondes)
+                setTimeout(() => {
+                    window.voiceflow.chat.open();
+                }, 6000);
+                
+            });
+        }
+        v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; 
+        v.type = "text/javascript"; 
+        s.parentNode.insertBefore(v, s);
+    })(document, 'script');
+    </script>
+
+</body>
+</html>

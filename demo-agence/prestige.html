@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agence Prestige Immobilier - Démo IA Luxe</title>
+    <style>
+        body { 
+            margin: 0; 
+            padding: 0; 
+            background-color: #000000; /* Fond noir pour le côté prestige */
+            font-family: 'Times New Roman', serif; /* Un style plus classique/luxe */
+        }
+        .container {
+            width: 100%;
+            text-align: center;
+        }
+        .img-site {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="asset/prestige.png" class="img-site" alt="Interface Agence Prestige">
+    </div>
+
+    <script type="text/javascript">
+    (function(d, t) {
+        console.log("💎 Voiceflow : Lancement pour Agence Prestige...");
+        var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+        
+        v.onload = function() {
+            window.voiceflow.chat.load({
+                verify: { projectID: '696299ab8bcc479dce293ca9' }, 
+                url: 'https://general-runtime.voiceflow.com',
+                versionID: 'production',
+                theme: {
+                    color: '#1a1a1a', // Noir mat / Anthracite
+                    showPoweredBy: false,
+                    assistant: {
+                        title: "Conciergerie Prestige",
+                        image: "https://agenceprestigeimmobilier.com/favicon.ico" 
+                    }
+                }
+            }).then(() => {
+                console.log("✨ Widget Prestige Initialisé.");
+                
+                // Message 1 : Accueil très exclusif
+                setTimeout(() => {
+                    window.voiceflow.chat.proactive.push({ 
+                        type: 'text', 
+                        payload: { message: "Bienvenue chez Agence Prestige Immobilier. ✨" } 
+                    });
+                }, 1000);
+
+                // Message 2 : Focus Biens d'Exception
+                setTimeout(() => {
+                    window.voiceflow.chat.proactive.push({ 
+                        type: 'text', 
+                        payload: { message: "Je suis votre conseiller dédié aux biens d'exception. Souhaitez-vous une expertise confidentielle de votre propriété ? 🏰" } 
+                    });
+                }, 3500);
+
+                // Ouverture automatique (7 secondes pour laisser le temps d'admirer le site)
+                setTimeout(() => {
+                    window.voiceflow.chat.open();
+                }, 7000);
+                
+            });
+        }
+        v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; 
+        v.type = "text/javascript"; 
+        s.parentNode.insertBefore(v, s);
+    })(document, 'script');
+    </script>
+
+</body>
+</html>
